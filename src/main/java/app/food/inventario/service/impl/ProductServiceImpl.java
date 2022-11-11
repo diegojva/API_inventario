@@ -10,10 +10,15 @@ import org.springframework.stereotype.Service;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepository repo;
+    private ProductRepository productRepository;
 
     @Override
     public Product save(Product product) {
-        return repo.save(product);
+        return productRepository.save(product);
+    }
+
+    @Override
+    public Product findProductById(Long id) {
+        return productRepository.findById(id).orElse(null);
     }
 }

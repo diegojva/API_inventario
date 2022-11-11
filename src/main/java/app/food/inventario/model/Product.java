@@ -19,12 +19,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduct;
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name = "id_cardex", nullable = false, foreignKey = @ForeignKey(name = "FK_CARDEX_PRODUCT"))
-    private Cardex cardex;
-
     private String name;
 
     private String category;
+    private Integer stock;
+
 }
