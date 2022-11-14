@@ -13,4 +13,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Modifying
     @Query(value = "INSERT INTO product(id_cardex, name, category) VALUES(:idCardex, :name, :category)", nativeQuery = true)
     Integer saveProduct(@Param("idCardex") Long idCardex, @Param("name") String name, @Param("category") String category);
+
+    
 }
