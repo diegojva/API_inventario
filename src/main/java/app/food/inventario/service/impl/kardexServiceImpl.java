@@ -32,7 +32,6 @@ public class kardexServiceImpl implements kardexService {
         products.forEach(prod -> {
             List<Kardex> kardexes = this.findKardexByProduct(prod.getIdProduct());
             this.stockValidate(kardexes, prod.getCant());
-            this.registerOut(kardexes, prod.getCant(),prod.getDescription());
             Boolean isRegister = this.registerOut(kardexes, prod.getCant(), prod.getDescription());
         });
         return true;
